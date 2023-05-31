@@ -1,0 +1,11 @@
+.shadow-2-strong {
+    background-image: url(https://mdbootstrap.com/img/new/fluid/city/008.jpg);
+    height: 100vh;
+  }
+
+  /* Height for devices larger than 576px */
+  @media (min-width: 992px) {
+  .shadow-2-strong{
+      margin-top: -58.59px;
+    }
+  }

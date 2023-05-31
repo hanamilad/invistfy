@@ -1,0 +1,62 @@
+.home {
+  position: absolute;
+  background-color: white;
+  z-index: 99999;
+  top: 0;
+  bottom: 0;
+  width: calc(100% - 100px);
+  left: 100px;
+}
+.home .cart {
+    border: 2px solid #0000001a;
+  border-radius: 25px;
+  box-shadow: 1px 1px 11px -5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 15px 0;
+  cursor: pointer;
+}
+.home .cart p {
+    color: #1515da;
+    font-weight: bolder;
+}
+.home .cart h4 {
+    color: #00000078;
+}
+.home .cart .fa-solid {
+    color: #00000078;
+    font-size: 2rem;
+}
+.home .cart:hover {
+    background-color: #1515da;
+}
+.home .cart:hover p,
+.home .cart:hover h4,
+.home .cart:hover .fa-solid {
+    color: white;
+}
+.persent {
+    margin: 50px 0;
+}
+.persent .Circule {
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+}
+.persent .show {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+@media screen and (max-width: 480px) {
+  .home {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 100px;
+  }
+}

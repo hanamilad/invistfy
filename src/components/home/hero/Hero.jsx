@@ -9,9 +9,13 @@ const Hero = () => {
         <div className='container'>
           <Heading title='Search Your Next Home ' subtitle='Find new & featured property located in your local city.' />
 
-          <form className='flex'>
+          <form className='flex search-box'>
             <div className='box'>
-              <span>City/Street</span>
+              <span>governorate</span>
+              <input type='text' placeholder='Location' />
+            </div>
+            <div className='box'>
+              <span>City</span>
               <input type='text' placeholder='Location' />
             </div>
             <div className='box'>
@@ -19,11 +23,12 @@ const Hero = () => {
               <input type='text' placeholder='Property Type' />
             </div>
             <div className='box'>
-              <span>Price Range</span>
-              <input type='text' placeholder='Price Range' />
+              <span>Min-Price</span>
+              <input type='text' placeholder='Min-Price' />
             </div>
             <div className='box'>
-              <h4>Advance Filter</h4>
+            <span>Max-Price</span>
+              <input type='text' placeholder='Max-Price' />
             </div>
             <button className='btn1'>
               <i className='fa fa-search'></i>

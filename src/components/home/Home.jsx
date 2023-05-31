@@ -2,7 +2,7 @@ import React from "react"
 import Awards from "./awards/Awards"
 import Featured from "./featured/Featured"
 import Hero from "./hero/Hero"
-import Location from "./location/Location"
+import View3d from "./View3d/View3d"
 import Price from "./price/Price"
 import Recent from "./recent/Recent"
 import Team from "./team/Team"
@@ -14,7 +14,7 @@ const Home = () => {
       <Featured />
       <Recent />
       <Awards />
-      <Location />
+      <View3d />
       <Team />
       <Price />
     </>

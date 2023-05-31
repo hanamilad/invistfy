@@ -1,0 +1,12 @@
+
+
+.col-lg-5 ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 10px;
+    justify-content: right;
+}
+@media screen and (max-width:480px){
+
+}

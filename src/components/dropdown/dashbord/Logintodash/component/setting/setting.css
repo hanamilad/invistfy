@@ -1,0 +1,35 @@
+.setting{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: calc(100% - 100px);
+    left: 100px;
+    background-color: white;
+    z-index: 99999;
+    padding: 0;
+}
+
+.setting .row{
+padding: 0;
+}
+.extable{
+    position: relative;
+    border: solid #f8f9fa;
+    border-width: 0.2rem 0 0;
+}
+.table th:hover{
+    cursor: pointer;
+    background-color: #6c6969;
+}
+.table .one{
+    color: #cb7979;
+    font-weight: bolder;
+}
+@media screen and (max-width: 480px) {
+    .setting {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      top: 100px;
+    }
+  }

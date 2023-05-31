@@ -8,7 +8,7 @@ const Pricing = () => {
   return (
     <>
       <section className='pricing mb'>
-        <Back name='30 days money back guarantee' title='No Extra Fees. Friendly Support' cover={img} />
+        <Back name='Welcome' title='Enjoy your experience with Investify ' cover={img} />
         <div className='price container'>
           <PriceCard />
         </div>

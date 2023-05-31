@@ -1,0 +1,51 @@
+.body{
+    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: calc(100% - 100px);
+    left: 100px;
+    background-color: white;
+    z-index: 99999;
+}
+.body .explane{
+    position: relative;
+    border: solid #f8f9fa;
+    border-width: 0.2rem 0 0;
+    padding: 0;
+    overflow: scroll;
+}
+.body .box{
+    border: 1px solid #00000075;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+}
+.body .box .fa-solid{
+    font-size: 2rem;
+    color: #008c21;
+ }
+.body .box .p{
+    font-size: 2rem;
+    font-weight: bolder;
+}
+.body .detils{
+    padding: 0;
+}
+.body .detils ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-around;
+    background-color: gray;
+}
+@media screen and (max-width: 480px) {
+    .body {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      top: 100px;
+    }
+  }

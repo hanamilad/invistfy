@@ -1,0 +1,21 @@
+.card-flex {
+  display: flex;
+  align-items: center;
+  background-color: rgb(238, 238, 238);
+  justify-content: space-between;
+  padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+.opacity{
+opacity: 0.4;
+}
+.card-flex .fa-solid:hover{
+color: red;
+}
+.card-flex .img {
+  width: 100px;
+}
+.card-flex .edit {
+  cursor: pointer;
+}

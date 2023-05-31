@@ -1,0 +1,44 @@
+[
+    {
+    "id":1,
+    "list": "50",
+    "cover": "../images/customer/team-1.jpg",
+    "address": "Liverpool, Canada",
+    "name": "Sargam S. Singh"
+  },
+  {
+    "id":2,
+    "list": "70",
+    "cover": "../images/customer/team-2.jpg",
+    "address": "Montreal, Canada",
+    "name": "Harijeet M. Siller"
+  },
+  {
+    "id":3,
+    "list": "80",
+    "cover": "../images/customer/team-3.jpg",
+    "address": "Denever, USA",
+    "name": "Anna K. Young"
+  },
+  {
+    "id":4,
+    "list": "51",
+    "cover": "../images/customer/team-4.jpg",
+    "address": "2272 Briarwood Drive",
+    "name": "Michael P. Grimaldo"
+  },
+  {
+    "id":5,
+    "list": "42",
+    "cover": "../images/customer/team-5.jpg",
+    "address": "2272 Briarwood Drive",
+    "name": "Michael P. Grimaldo"
+  },
+  {
+    "id":6,
+    "list": "38",
+    "cover": "../images/customer/team-5.jpg",
+    "address": "Montreal, USA",
+    "name": "Adam K. Jollio"
+  }
+]

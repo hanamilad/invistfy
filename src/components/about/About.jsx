@@ -11,11 +11,12 @@ const About = () => {
         <Back name='About Us' title='About Us - Who We Are?' cover={img} />
         <div className='container flex mtop'>
           <div className='left row'>
-            <Heading title='Our Agency Story' subtitle='Check out our company story and work process' />
+            <Heading title='Our Agency Story' subtitle='The site was created by students of New Cairo University' />
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-            <button className='btn2'>More About Us</button>
+            <p>Our mission: To motivate and inspire people to get living the life they deserve.
+When you look for a property, it’s not just a better home you seek, it’s a better future.
+Unlock Your Potential.</p>
+            <p>Investify website has been created In the year 2023 to facilitate the process of buying and renting on the Internet quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
           </div>
           <div className='right row'>
             <img src='./immio.jpg' alt='' />

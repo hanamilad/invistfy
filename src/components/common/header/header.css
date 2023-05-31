@@ -38,11 +38,11 @@ header .toggle {
   header {
     padding: 0;
   }
-  header img {
+  header .logo img {
     margin-top: 30px;
   }
   header .button {
-    display: none;
+    height: 50px;
   }
   header .nav .flex {
     display: none;
@@ -64,4 +64,20 @@ header .toggle {
     margin-bottom: 20px;
     color: #fff;
   }
+}
+/* //////////////////////// */
+.dropdown{
+  width: 50px;
+  height: 100%;
+}
+.dropdown .btn-secondary{
+  padding: 0;
+  border-radius: 30px;
+}
+.dropdown .btn-secondary img{
+  max-width: 100%;
+  border-radius: 30px;
+}
+.dropdown .dropdown-item{
+  margin-left: 0;
 }

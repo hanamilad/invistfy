@@ -1,0 +1,31 @@
+.House{
+    background-color: rgb(238, 238, 238);
+}
+.House .hed{
+    margin: 20px 0;
+background-color: white;
+padding: 20px;
+}
+.card-filter{
+    margin: 20px 0;
+    background-color: white;
+}
+.titel{
+    text-align: center;
+    
+}
+.House .simpledetails{
+    margin-top: 20px;
+}
+.House .category span{
+    padding: 4px 15px;
+    border-radius: 2px;
+    font-weight: 600;
+    font-size: 13px;
+    display: inline-block;
+}
+.House .category .fa-heart{
+        font-size: 20px;
+        color: #bec7d8;
+    
+}

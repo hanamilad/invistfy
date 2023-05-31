@@ -1,0 +1,33 @@
+[
+    {
+        "username":"custemer1",
+        "Email":"test email@gmail.com",
+        "phone":"0123456789",
+        "Date":"this day"
+    },{
+        "username":"custemer2",
+        "Email":"test email@gmail.com",
+        "phone":"0123456789",
+        "Date":"this day"  
+    },{
+        "username":"custemer3",
+        "Email":"test email@gmail.com",
+        "phone":"0123456789",
+        "Date":"cash"
+    },{
+        "username":"custemer4",
+        "Email":"test email@gmail.com",
+        "phone":"0123456789",
+        "Date":"this day"
+    },{
+        "username":"custemer5",
+        "Email":"test email@gmail.com",
+        "phone":"0123456789",
+        "Date":"this month"
+    },{
+        "username":"custemer6",
+        "Email":"test email@gmail.com",
+        "phone":"0123456789",
+        "Date":"this month"
+    }
+]

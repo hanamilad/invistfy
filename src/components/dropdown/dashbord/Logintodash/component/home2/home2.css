@@ -1,0 +1,29 @@
+.home2{
+margin-top: 50px;
+}
+.home2 .scroll{
+overflow: scroll;
+}
+.home2 .head{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.home2 .text{
+    font-weight: bolder;
+    font-size: 2rem;
+    color: #1515da;
+}
+.home2 .titel{
+    text-align: center;
+    font-weight: bolder;
+}
+.home2 .total{
+    display: flex;
+    text-align: center;
+    margin-top: 8px;
+    border-bottom: 2px solid #00000029;
+}
+.home2 .total .part{
+
+}
