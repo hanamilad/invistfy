@@ -1,21 +1,34 @@
-import React  from "react";
+import React, { useState, useEffect } from "react";
 import list from "./Data.json";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import { AddProdectInItemPage} from "../../../redux/counterSlice";
+import { AddProdectInItemPage } from "../../../redux/counterSlice";
 import { useDispatch } from "react-redux";
 
-
 const RecentCard = () => {
-
   const dispatch = useDispatch();
+  const [isLoading, setIsLoading] = useState(true);
+
   const unit = (item) => {
     dispatch(AddProdectInItemPage(item));
+  };
+  const [data, setData] = useState(list);
+  let wishList = (dataIndex) => {
+    if (data[dataIndex]["favourite"]) {
+      if (data[dataIndex]["likes"] >= 1) {
+        data[dataIndex]["likes"] = data[dataIndex]["likes"] - 1;
+      }
+    } else data[dataIndex]["likes"] = data[dataIndex]["likes"] + 1;
+
+    data[dataIndex]["favourite"] = !data[dataIndex]["favourite"];
+
+    setData(data);
+    setIsLoading(!isLoading);
   };
 
   return (
     <>
       <div className="content grid3 mtop">
-        {list.map((item) => {
+        {data.map((item, index) => {
           return (
             <div className="box shadow" key={item.id}>
               <Link
@@ -42,8 +55,12 @@ const RecentCard = () => {
                   >
                     {item.category}
                   </span>
-                  <span  >
-                    <i className="fa fa-heart"></i> <span>{0}</span>
+                  <span onClick={() => wishList(index)}>
+                    <i
+                      className="fa fa-heart"
+                      style={{ color: item.favourite ? "red" : "grey" }}
+                    ></i>{" "}
+                    <span>{item.likes}</span>
                   </span>
                 </div>
                 <h4>{item.name}</h4>

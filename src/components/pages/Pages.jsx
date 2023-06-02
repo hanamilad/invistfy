@@ -8,7 +8,7 @@ import Pricing from "../pricing/Pricing";
 import Blog from "../blog/Blog";
 import Services from "../services/Services";
 import Add from "../addprop/Add";
-import login from "../login/Loginbage";
+import login from "../login/Loginbag";
 import signup from "../login/Signup";
 import Video from "../home/Video/Video";
 import One from "../home/Video/One";

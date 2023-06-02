@@ -6,7 +6,9 @@
     "location": "210 Zirak Road, Canada",
     "category": "For Rent",
     "price": "$3,700",
-    "type": "Apartment"
+    "type": "Apartment",
+    "favourite": true,
+    "likes": 20
   },
   {
     "id": 2,
@@ -15,7 +17,9 @@
     "location": "5698 Zirak Road, NewYork",
     "category": "For Sale",
     "price": "$9,750",
-    "type": "Condos"
+    "type": "Condos",
+    "favourite": false,
+    "likes": 10
   },
   {
     "id": 3,
@@ -24,7 +28,9 @@
     "location": "5624 Mooker Market, USA",
     "category": "For Rent",
     "price": "$5,860",
-    "type": "Offices"
+    "type": "Offices",
+    "favourite": true,
+    "likes": 60
   },
   {
     "id": 4,
@@ -33,7 +39,9 @@
     "location": "5621 Liverpool, London",
     "category": "For Sale",
     "price": "$7,540",
-    "type": "Homes & Villas"
+    "type": "Homes & Villas",
+    "favourite": false,
+    "likes": 80
   },
   {
     "id": 5,
@@ -42,7 +50,9 @@
     "location": "210 Montreal Road, Canada",
     "category": "For Rent",
     "price": "$4,850",
-    "type": "Commercial"
+    "type": "Commercial",
+    "favourite": true,
+    "likes": 210
   },
   {
     "id": 6,
@@ -51,6 +61,8 @@
     "location": "210 Zirak Road, Canada",
     "category": "For Sale",
     "price": "$2,742",
-    "type": "Apartment"
+    "type": "Apartment",
+    "favourite": true,
+    "likes": 290
   }
 ]

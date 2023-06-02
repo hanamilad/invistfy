@@ -133,7 +133,7 @@ export const price = [
     id: "1",
     plan: "Silver",
     price: "29",
-    ptext: "3 ad for month",
+    ptext: "10 ad for month",
     img: "https://posing-html.vercel.app/assets/img/icons/pricing_icon_1.svg",
     list: [
       {
@@ -155,7 +155,7 @@ export const price = [
     id: "2",
     plan: "Standard",
     price: "49",
-    ptext: "5 ad for month",
+    ptext: "15 ad for month",
     img: "https://posing-html.vercel.app/assets/img/icons/pricing_icon_2.svg",
     list: [
       {
@@ -176,7 +176,7 @@ export const price = [
     id: "3",
     plan: "Bronze",
     price: "79",
-    ptext: "7 ad for month",
+    ptext: "20 ad for month",
     img: "https://posing-html.vercel.app/assets/img/icons/pricing_icon_3.svg",
     list: [
       {
