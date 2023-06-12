@@ -1,42 +1,25 @@
-import React, { useState } from "react";
-import list from "./Data.json";
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux';
+import { AddProdectInItemPage, DeletItemFromList, ListItem } from '../../../redux/counterSlice';
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
-import { AddItemToList, AddProdectInItemPage, DeletItemFromList } from "../../../redux/counterSlice";
-import { useDispatch } from "react-redux";
-import Swal from "sweetalert2";
 
-const RecentCard = () => {
-  const dispatch = useDispatch();
-  const [isLoading, setIsLoading] = useState(true);
 
-  const unit = (item) => {
-    dispatch(AddProdectInItemPage(item));
-  };
-  const [data, setData] = useState(list);
-  const [User, setUser] = useState(true)
-  let wishList = (dataIndex,item) => {
-    if(User){
-      if (data[dataIndex]["favourite"]) {
-        if (data[dataIndex]["likes"] >= 1) {
-          data[dataIndex]["likes"] = data[dataIndex]["likes"] - 1;
-        }
-        dispatch(DeletItemFromList(item))
-      } else{ 
-        data[dataIndex]["likes"] = data[dataIndex]["likes"] + 1;
-        dispatch(AddItemToList(item))
-    };
-      data[dataIndex]["favourite"] = !data[dataIndex]["favourite"];
-    }else{
-      Swal.fire("pleas Login first ");
-    }
-    setData(data);
-    setIsLoading(!isLoading);
-  };
+const List = () => {
+    const data=useSelector(ListItem)
+    const dispatch = useDispatch();
+    const unit = (item) => {
+        dispatch(AddProdectInItemPage(item));
+      };
+      let wishList = (item) => {
+dispatch(DeletItemFromList(item))
 
+      };
   return (
-    <>
-      <div className="content grid3 mtop">
-        {data.map((item, index) => {
+    <div className="recent">
+        <div className="container">
+            <div className="row">
+    <div className='List grid3 mtop'>
+            {data.map((item) => {
           return (
             <div className="box shadow" key={item.id}>
               <Link
@@ -63,10 +46,10 @@ const RecentCard = () => {
                   >
                     {item.category}
                   </span>
-                  <span onClick={() => wishList(index,item)}>
+                  <span onClick={() => wishList(item)}>
                     <i
                       className="fa fa-heart"
-                      style={{ color: item.favourite ? "red" : "grey" }}
+                      style={{ color:"red"}}
                     ></i>{" "}
                     <span>{item.likes}</span>
                   </span>
@@ -85,9 +68,11 @@ const RecentCard = () => {
             </div>
           );
         })}
-      </div>
-    </>
-  );
-};
+        </div>
+        </div>
+        </div>
+    </div>
+  )
+}
 
-export default RecentCard;
+export default List

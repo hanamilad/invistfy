@@ -15,6 +15,7 @@ const Units = () => {
               <thead>
                 <tr>
                   <th scope="col">ID</th>
+                  <th scope="col">image</th>
                   <th scope="col">User Name</th>
                   <th scope="col">Unit Name</th>
                   <th scope="col">Price</th>
@@ -30,6 +31,7 @@ const Units = () => {
                       <input type={"checkbox"} />
                       <span>{index}</span>
                     </th>
+                    <td className='img'><img src={item.image} alt="" /></td>
                     <td>{item.username}</td>
                     <td>{item.unitname}</td>
                     <td>{item.price}</td>

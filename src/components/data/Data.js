@@ -131,7 +131,7 @@ export const View3D = [
 export const price = [
   {
     id: "1",
-    plan: "Silver",
+    plan: "Bronze",
     price: "29",
     ptext: "10 ad for month",
     img: "https://posing-html.vercel.app/assets/img/icons/pricing_icon_1.svg",
@@ -153,7 +153,7 @@ export const price = [
   },
   {
     id: "2",
-    plan: "Standard",
+    plan: "Sliver",
     price: "49",
     ptext: "15 ad for month",
     img: "https://posing-html.vercel.app/assets/img/icons/pricing_icon_2.svg",
@@ -174,7 +174,7 @@ export const price = [
   },
   {
     id: "3",
-    plan: "Bronze",
+    plan: "GOLD",
     price: "79",
     ptext: "20 ad for month",
     img: "https://posing-html.vercel.app/assets/img/icons/pricing_icon_3.svg",

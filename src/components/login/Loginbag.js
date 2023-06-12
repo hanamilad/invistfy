@@ -1,8 +1,5 @@
 import React, { useCallback, useState } from "react";
-import {
-  LoginSocialGoogle,
-  LoginSocialFacebook,
-} from "reactjs-social-login";
+import { LoginSocialGoogle, LoginSocialFacebook } from "reactjs-social-login";
 import "./Login.css";
 import { Link } from "react-router-dom";
 import loginlogo from "./images/login.jpg";
@@ -12,18 +9,14 @@ import {
 } from "react-social-login-buttons";
 const REDIRECT_URI = window.location.href;
 
-
-
-
 // logout
-// const onLogoutSuccess = useCallback(() => {
-//   setProfile(null);
-//   setProvider("");
-//   alert("logout success");
-// }, []);
-
 
 const Loginbage = () => {
+  const onLogoutSuccess = useCallback(() => {
+    setProfile(null);
+    setProvider("");
+    alert("logout success");
+  }, []);
   const [provider, setProvider] = useState("");
   const [profile, setProfile] = useState(null);
 
@@ -59,50 +52,41 @@ const Loginbage = () => {
             <p className="text">or</p>
 
             <LoginSocialGoogle
-          isOnlyGetToken
-          client_id={process.env.REACT_APP_GG_APP_ID || ""}
-          onLoginStart={onLoginStart}
-          onResolve={({ provider, data }) => {
-            setProvider(provider);
-            setProfile(data);
-            console.log({
-              provider: provider,
-              profile: data,
-            });
-          }}
-          onReject={(err) => {
-            console.log(err);
-          }}
-        >
-          <GoogleLoginButton />
-        </LoginSocialGoogle>
-
-             {/* <button className="google_btn">
-              <img src={logogoogel} alt="google icon" />
-              <span>Sing in with Google</span>
-            </button>  */}
-            {/* <button className="Facebook_btn">
-              <img src={logofac} alt="Facebook icon" />
-              <span>Sing in with Facebook</span>
-            </button> */}
-                    <LoginSocialFacebook
-          isOnlyGetToken
-          appId={process.env.REACT_APP_FB_APP_ID || ""}
-          onLoginStart={onLoginStart}
-          onResolve={({ provider, data }) => {
-            setProvider(provider);
-            setProfile(data);
-            console.log({
-              provider: provider,
-              profile: data,
-            });
-          }}
-          onReject={(err) => {
-            console.log(err);
-          }}
-        >
-          <FacebookLoginButton />
-          </LoginSocialFacebook>
+              isOnlyGetToken
+              client_id={process.env.REACT_APP_GG_APP_ID || ""}
+              onLoginStart={onLoginStart}
+              onResolve={({ provider, data }) => {
+                setProvider(provider);
+                setProfile(data);
+                console.log({
+                  provider: provider,
+                  profile: data,
+                });
+              }}
+              onReject={(err) => {
+                console.log(err);
+              }}
+            >
+              <GoogleLoginButton />
+            </LoginSocialGoogle>
+            <LoginSocialFacebook
+              isOnlyGetToken
+              appId={process.env.REACT_APP_FB_APP_ID || ""}
+              onLoginStart={onLoginStart}
+              onResolve={({ provider, data }) => {
+                setProvider(provider);
+                setProfile(data);
+                console.log({
+                  provider: provider,
+                  profile: data,
+                });
+              }}
+              onReject={(err) => {
+                console.log(err);
+              }}
+            >
+              <FacebookLoginButton />
+            </LoginSocialFacebook>
             <p className="text">
               New Here ? <Link to="/signup">Sing Up</Link>
             </p>

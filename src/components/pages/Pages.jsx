@@ -23,11 +23,13 @@ import Item from "../item/Item";
 import Fillter from "../home/featured/bage/Fillter";
 //dashboard
 import LoginDash from "../dropdown/dashbord/Logintodash/Login";
+import list from '../dropdown/List/List'
 import Homedashboard from '../dropdown/dashbord/Logintodash/component/home/home'
 import Inform from '../dropdown/dashbord/Logintodash/component/Inform/Inform'
 import Body from '../dropdown/dashbord/Logintodash/component/BODY/BODY'
 import Setting from '../dropdown/dashbord/Logintodash/component/setting/setting'
 import Units from '../dropdown/dashbord/Logintodash/component/Units/Units'
+import Addindash from '../dropdown/dashbord/Logintodash/component/Add/Add'
 
 const Pages = () => {
   return (
@@ -56,10 +58,12 @@ const Pages = () => {
           <Route exact path="/Fillter" component={Fillter} />
           {/* dashboard */}
           <Route exact path="/dash" component={LoginDash} />
+          <Route exact path="/list" component={list} />
           <Route exact path="/Homedashboard" component={Homedashboard} />
           <Route exact path="/Inform" component={Inform} />
           <Route exact path="/Body" component={Body} />
           <Route exact path="/Setting" component={Setting} /> 
+          <Route exact path="/Addindash" component={Addindash} /> 
           <Route exact path="/units" component={Units} /> 
         </Switch>
         <Footer />

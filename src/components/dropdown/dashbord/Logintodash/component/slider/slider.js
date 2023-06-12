@@ -32,6 +32,11 @@ const Slider = () => {
           <i class="fa-solid fa-layer-group"></i>
           </Link>
         </li>
+        <li>
+          <Link to="/Addindash">
+          <i class="fa-solid fa-circle-plus"></i>
+          </Link>
+        </li>
 
         <li>
       <Link to="Setting">

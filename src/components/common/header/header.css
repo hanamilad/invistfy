@@ -81,3 +81,28 @@ header .toggle {
 .dropdown .dropdown-item{
   margin-left: 0;
 }
+
+.point{
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 12px;
+  background-color: red;
+  border-radius: 50px;
+  display: none;
+  top: 0;
+}
+.list{
+  position: relative;
+}
+.point-list{
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 11px;
+  border-radius: 50px;
+  background-color: red;
+  top: 0;
+  left: 5px;
+  display: none;
+}

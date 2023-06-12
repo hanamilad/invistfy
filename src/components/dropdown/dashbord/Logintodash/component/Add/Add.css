@@ -1,0 +1,46 @@
+.add{
+    
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: calc(100% - 100px);
+    left: 100px;
+    background-color: white;
+    z-index: 99999;
+}
+.contact form div {
+    display: flex;
+  }
+  .contact input {
+    margin-bottom: 20px;
+    margin-right: 10px;
+  }
+  .contact form {
+    padding: 30px;
+  }
+  @media screen and (max-width: 768px) {
+    .contact h4 {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+    .contact form div {
+      flex-direction: column;
+    }
+    .contact input {
+      width: 100%;
+    }
+  }
+  .mes-reqest{
+  text-align: center;
+  }
+  .mes-reqest span{
+    color: red;
+  }
+  @media screen and (max-width: 480px) {
+    .add {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      top: 100px;
+    }
+  }

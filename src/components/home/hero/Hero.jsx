@@ -23,12 +23,8 @@ const Hero = () => {
               <input type='text' placeholder='Property Type' />
             </div>
             <div className='box'>
-              <span>Min-Price</span>
-              <input type='text' placeholder='Min-Price' />
-            </div>
-            <div className='box'>
-            <span>Max-Price</span>
-              <input type='text' placeholder='Max-Price' />
+              <span>Price</span>
+              <input type='text' placeholder='Price' />
             </div>
             <button className='btn1'>
               <i className='fa fa-search'></i>

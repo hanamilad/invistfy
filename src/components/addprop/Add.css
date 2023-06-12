@@ -1,12 +1,6 @@
 .contact form div {
   display: flex;
 }
-.contact textarea {
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  width: 100%;
-  border-radius: 5px;
-  margin-bottom: 20px;
-}
 .contact input {
   margin-bottom: 20px;
   margin-right: 10px;

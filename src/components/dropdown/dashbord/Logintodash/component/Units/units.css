@@ -40,6 +40,10 @@
     justify-content: space-around;
     background-color: gray;
 }
+.Units .img{
+    width: 150px;
+    height: 100px;
+}
 @media screen and (max-width: 480px) {
     .Units {
       position: absolute;
