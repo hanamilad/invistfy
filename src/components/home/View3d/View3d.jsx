@@ -10,8 +10,8 @@ const View3d = () => {
       <section className="location padding">
         <div className="container">
           <Heading
-            title="3D products"
-            subtitle="Lorem ipsumHere you can look at the property with a good 3D view"
+            title="360` products"
+          
           />
 
           <div className="content grid3 mtop">

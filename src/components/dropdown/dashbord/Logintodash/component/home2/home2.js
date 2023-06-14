@@ -1,8 +1,24 @@
 import React from "react";
 import data from "../../josn/custemer.json";
 import "./home2.css";
+// import { useState } from "react";
+// import { useEffect } from "react";
+// import axiosRequest from "../../../../../../services/axiosRequest";
 
 const Home2 = () => {
+
+  // const [data, setData] = useState([]);
+
+  // useEffect(() => {
+  //   axiosRequest.get('/api/data')
+  //     .then(response => {
+  //       setData(response.data);
+  //     })
+  //     .catch(error => {
+  //       console.error(error);
+  //     });
+  // }, []);
+
   return (
     <div className="home2">
       <div className="container-fluid">

@@ -32,17 +32,17 @@ export const nav = [
 export const featured = [
   {
     cover: "../images/hero/h1.png",
-    name: "Family House",
+    name: "Apartment",
     total: "122 Property",
   },
   {
     cover: "../images/hero/h2.png",
-    name: "House & Villa",
+    name: "Duplex",
     total: "155 Property",
   },
   {
     cover: "../images/hero/h3.png",
-    name: "Apartment",
+    name: "commercial",
     total: "300 Property",
   },
   {
@@ -52,7 +52,7 @@ export const featured = [
   },
   {
     cover: "../images/hero/h6.png",
-    name: "Villa & Condo",
+    name: "Villa ",
     total: "80 Property",
   },
 ];
@@ -81,7 +81,7 @@ export const awards = [
 export const View3D = [
   {
     id: 1,
-    name: "New Orleans, Louisiana",
+    name: "new cairo",
     Bedrooms: "Bedrooms: 4",
     Bathrooms: "Bathrooms:  2",
     cover: "./images/video.jpg",
@@ -89,7 +89,7 @@ export const View3D = [
   },
   {
     id: 2,
-    name: "Jerrsy, United State",
+    name: "nasr city",
     Bedrooms: "Bedrooms: 16",
     Bathrooms: "Bathrooms:  6",
     cover: "./images/video2.jpg",
@@ -97,7 +97,7 @@ export const View3D = [
   },
   {
     id: 3,
-    name: "Liverpool, London",
+    name: "Alex",
     Bedrooms: "Bedrooms: 5",
     Bathrooms: " Bathrooms:  2",
     cover: "./images/video3.jpg",
@@ -105,7 +105,7 @@ export const View3D = [
   },
   {
     id: 4,
-    name: "NewYork, United States",
+    name: "El Alamein city",
     Bedrooms: "Bedrooms: 7",
     Bathrooms: " Bathrooms:  2",
     cover: "./images/location/city-4.png",
@@ -113,7 +113,7 @@ export const View3D = [
   },
   {
     id: 5,
-    name: "Montreal, Canada",
+    name: "Ancient Egypt",
     Bedrooms: "Bedrooms: 10 ",
     Bathrooms: " Bathrooms:  4",
     cover: "./images/location/city-5.png",
@@ -121,7 +121,7 @@ export const View3D = [
   },
   {
     id: 6,
-    name: "California, USA",
+    name: "Tahrir ",
     Bedrooms: "Bedrooms: 12 ",
     Bathrooms: " 3Bathrooms:   ",
     cover: "./images/location/city-6.png",
