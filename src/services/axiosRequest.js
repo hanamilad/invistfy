@@ -9,7 +9,7 @@ const axiosRequest = axios.create({
 });
 
 axiosRequest.interceptors.request.use((config) => {
-  const accessToken = LocalStorageService.getAccessToken();
+  const accessToken = LocalStorageService.getService().getAccessToken();
   if (accessToken) {
     config.headers.Authorization = `Bearer ${accessToken}`;
   }
@@ -32,4 +32,4 @@ axiosRequest.interceptors.response.use(
   }
 );
 
-export default axiosRequest;
+export default axiosRequest;

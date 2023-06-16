@@ -31,13 +31,16 @@ const Loginbage = () => {
       email,
       password,
     };
+
     axiosRequest
       .post("api/token/login/", data)
       .then((response) => {
-        LocalStorageService.setToken(response.data.access);
-        ToasterConfig(response.data.messsage, "success");
+        console.log(response.data.data.)
+        // LocalStorageService.getService().setToken();
+        // ToasterConfig(response.data.messsage, "success");
       })
       .catch((error) => {
+        // console.log(error);
         ToasterConfig(error.response.data.message, "error");
       });
   };
