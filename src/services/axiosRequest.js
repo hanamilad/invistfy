@@ -1,7 +1,7 @@
 import axios from "axios";
 import LocalStorageService from "./localstorage";
 const axiosRequest = axios.create({
-  baseURL: "http://127.0.0.1:8000/",
+  baseURL: "https://elshaf3y.pythonanywhere.com/",
   headers: {
     Accept: "application/json",
     "Content-Type": "application/json",
@@ -18,6 +18,18 @@ axiosRequest.interceptors.request.use((config) => {
 
 axiosRequest.interceptors.response.use(
   (response) => response,
-  (error) => Promise.reject(error)
+  (error) => {
+    if (error.response && error.response.data) {
+      const contentType = error.response.headers["content-type"];
+      if (contentType && !contentType.includes("application/json")) {
+        // Handle non-JSON response here (e.g., display an error message)
+        console.error("Non-JSON response received:", error.response.data);
+        throw new Error("Non-JSON response received");
+      }
+    }
+
+    return Promise.reject(error);
+  }
 );
-export default axiosRequest;
+
+export default axiosRequest;

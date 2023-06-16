@@ -2,33 +2,43 @@ import React, { useState } from "react";
 import Heading from "../../common/Heading";
 import "./hero.css";
 import axiosRequest from "../../../services/axiosRequest";
+import LocalStorageService from "../../../services/localstorage";
 
 const Hero = () => {
   const [country, setCountry] = useState("");
   const [city, setcity] = useState("");
-  const [price, setPrice] = useState("");
+  const [minprice, setminPrice] = useState("");
+  const [maxprice, setmaxPrice] = useState("");
   const [type, setType] = useState("");
-  const [results, setResults] = useState("hana");
+  const [results, setResults] = useState("");
 
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-
-    axiosRequest
-      .get("/property/search", {
-        params: {
-          country,
-          price,
-          city,
-          type,
-        },
-      })
-      .then((response) => {
-        setResults(response.data);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+  
+    try {
+      const url = `/property/search/`;
+      const params = {
+        country,
+        minprice,
+        maxprice,
+        city,
+        type,
+      };
+  
+      const response = await axiosRequest.get(url, { params });
+  
+      if (response.status === 200) {
+        const searchData = response.data;
+        console.log(searchData);
+      } else {
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
+
+
 
   return (
     <>
@@ -39,7 +49,7 @@ const Hero = () => {
             subtitle="Find new & featured property located in your local city."
           />
 
-          <form className="flex search-box">
+          <form className="flex search-box" onSubmit={handleSubmit}>
             <div className="box">
               <span>governorate</span>
               <input
@@ -74,14 +84,25 @@ const Hero = () => {
               />
             </div>
             <div className="box">
-              <span>Price</span>
+              <span>minPrice</span>
               <input
                 type="text"
                 placeholder="min Price"
                 id="price"
                 name="price"
-                value={price}
-                onChange={(e) => setPrice(e.target.value)}
+                value={minprice}
+                onChange={(e) => setminPrice(e.target.value)}
+              />
+            </div>
+            <div className="box">
+              <span>maxPrice</span>
+              <input
+                type="text"
+                placeholder="min Price"
+                id="price"
+                name="price"
+                value={maxprice}
+                onChange={(e) => setmaxPrice(e.target.value)}
               />
             </div>
             <button className="btn1">

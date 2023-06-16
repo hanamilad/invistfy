@@ -7,40 +7,65 @@ import { useState } from "react";
 import axiosRequest from "../../services/axiosRequest";
 import LocalStorageService from "../../services/localstorage";
 import { useHistory } from "react-router-dom";
+import ToasterConfig from "../../services/ToasterConfig";
 
 const Signup = () => {
-  const [name, setName] = useState("");
+  const [first_name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [phone, setphone] = useState("");
+  const [password2, setpassword2] = useState("");
+  const [phone_number, setphone] = useState("");
   const history = useHistory();
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    const response = await axiosRequest
-      .post("api/token/register/", {
-        name,
-        email,
-        password,
-        confirmPassword,
-        phone,
-      })
+    const data = {
+      first_name,
+      email,
+      password,
+      password2,
+      phone_number,
+    };
+    axiosRequest
+      .post("api/token/register/", data)
       .then((response) => {
-        if (password !== confirmPassword) {
-          alert("password not match");
-        } else {
-          LocalStorageService.setToken(
-            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg3MTA4NjU1LCJpYXQiOjE2ODY2NzY2NTUsImp0aSI6ImRkYzkxOTYyZmEzMTRhZWU5YmM4YjhhMTkyMDliZDdlIiwidXNlcl9pZCI6MX0.FNuHBv3q05rMnjGKSdxOEC8u_KZnCTE5XIkjAStyfks"
-          );
-          history.push("/log");
-          console.log(response);
-        }
+        LocalStorageService.setToken(response.data.access);
+        history.push("/log");
+        // console.log(response);
       })
       .catch((err) => {
-        console.log(err);
+        ToasterConfig(err.response.data.message, "error");
+        // console.log(err, "a7a");
       });
   };
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   const data = {
+  //     first_name,
+  //     email,
+  //     password,
+  //     password2,
+  //     phone_number,
+  //   };
+  //   fetch('https://elshaf3y.pythonanywhere.com/api/token/register/', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify(data),
+  //   })
+  //     .then((response) => response.json()
+  //     )
+  //     .then((responseData) => {
+  //       // LocalStorageService.setToken(responseData.data.access)
+  //       // history.push("/log");
+  //       console.log(responseData);
+  //     })
+  //     .catch((error) => {
+
+  //       console.error(error);
+  //     });
+  // };
 
   return (
     <div className="Signup" id="Signup">
@@ -55,7 +80,7 @@ const Signup = () => {
               type="text"
               className="input"
               placeholder="name"
-              value={name}
+              value={first_name}
               onChange={(event) => setName(event.target.value)}
             />
             <input
@@ -76,14 +101,14 @@ const Signup = () => {
               type="password"
               className="input"
               placeholder="confirm Password"
-              value={confirmPassword}
-              onChange={(event) => setConfirmPassword(event.target.value)}
+              value={password2}
+              onChange={(event) => setpassword2(event.target.value)}
             />
             <input
               type="tel"
               className="input"
               placeholder="phone"
-              value={phone}
+              value={phone_number}
               onChange={(event) => setphone(event.target.value)}
             />
             <button type="submit" className="btn">

@@ -1,7 +1,11 @@
-
-.Login,.Signup{
+.Login,
+.Signup {
   margin-bottom: 20px;
+  text-align: center;
+  text-align: -moz-center;
+  text-align: -webkit-center;
 }
+
 .form_container {
   display: flex;
   margin-top: 45px;
@@ -11,7 +15,8 @@
   box-shadow: 3px 4px 36px -6px rgba(0, 0, 0, 0.4);
 }
 
-.Login .left,.Signup .left {
+.Login .left,
+.Signup .left {
   flex: 1.5;
   overflow: hidden;
   position: relative;
@@ -26,7 +31,8 @@
   top: -50px;
 }
 
-.Login .right,.Signup .right {
+.Login .right,
+.Signup .right {
   flex: 2;
   display: flex;
   flex-direction: column;
@@ -44,10 +50,14 @@
 .input {
   width: 320px;
   height: 35px;
-  padding: 5px;
+  padding: 20px;
   margin: 5px;
   border: 1px solid #2c444e;
-  border-radius: 2px;
+  border-radius: 15px;
+}
+
+.input:focus {
+  border: 1px solid #3498db;
 }
 
 .Login .btn,
@@ -97,6 +107,7 @@
   position: relative;
   padding: 0;
 }
+
 .Facebook_btn {
   width: 230px;
   height: 40px;
@@ -128,10 +139,12 @@
 .google_btn > span {
   margin-left: 10px;
 }
+
 @media only screen and (max-width: 820px) {
   .form_container {
     width: 100%;
   }
+
   .left {
     display: none;
   }

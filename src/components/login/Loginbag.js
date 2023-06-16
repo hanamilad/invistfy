@@ -9,10 +9,8 @@ import {
   GoogleLoginButton,
 } from "react-social-login-buttons";
 import LocalStorageService from "../../services/localstorage";
-import { useHistory } from 'react-router-dom';
-
-
-
+import { useHistory } from "react-router-dom";
+import ToasterConfig from "../../services/ToasterConfig";
 
 const Loginbage = () => {
   const history = useHistory();
@@ -27,92 +25,118 @@ const Loginbage = () => {
     setProvider("");
     LocalStorageService.clearToken();
   }, []);
-
-const handleSubmit = async (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-   
-      const response = await axiosRequest.post("api/token/login/", { email, password })
-.then((response)=>{
-      LocalStorageService.setToken("token from backend");
-      history.push('/')
-      console.log(response);
-    })
-    .catch((err)=>{
-      console.log(err);
-    }) 
-    
+    const data = {
+      email,
+      password,
+    };
+    axiosRequest
+      .post("api/token/login/", data)
+      .then((response) => {
+        LocalStorageService.setToken(response.data.access);
+        ToasterConfig(response.data.messsage, "success");
+      })
+      .catch((error) => {
+        ToasterConfig(error.response.data.message, "error");
+      });
   };
-
+  // const handleSubmit = (event) => {
+  //   event.preventDefault();
+  //   const data = {
+  //     email,
+  //     password,
+  //   };
+  //   fetch("https://elshaf3y.pythonanywhere.com/api/token/login/", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify(data),
+  //   })
+  //     .then((response) => response.json())
+  //     .then((responseData) => {
+  // LocalStorageService.setToken(responseData.data.access)
+  //       // history.push("/");
+  //       console.log(responseData);
+  //     })
+  //     .catch((error) => {
+  //       // Handle any errors
+  //       console.error(error);
+  //     });
+  // };
 
   return (
-    <div className="Login" id="login">
-      <div className="container">
-        <div className="form_container">
-          <div className="left">
-            <img className="img" src={loginlogo} alt="login" />
-          </div>
-          <form className="right" onSubmit={handleSubmit} >
-            <h2 className="from_heading">Members Log in</h2>
-            <input
-              type="text"
-              className="input"
-              placeholder="Email"
-              value={email}
-              name="Email"
-              required
-              onChange={(event) => setEmail(event.target.value)}
-            />
-            <input
-              type="text"
-              className="input"
-              placeholder="Password"
-              name="Password"
-              value={password}
-              onChange={(event) => setPassword(event.target.value)}
-              required
-            />
-            <button
-              type="submit"
-              className="btn"
-            >
-             Log In
-            </button>
-            <p className="text">or</p>
+    <div className="row text-center p-4">
+      <div className="col-md-12">
+        <div
+          className="Login w-100 justify-content-center container-fluid"
+          id="login"
+        >
+          <div className="form_container row p-4">
+            <div className="left col-md-6">
+              <img className="img" src={loginlogo} alt="login" />
+            </div>
+            <form className="right col-md-6" onSubmit={handleSubmit}>
+              <h2 className="from_heading">Members Log in</h2>
+              <input
+                type="text"
+                className="input"
+                placeholder="Email"
+                value={email}
+                name="Email"
+                required
+                onChange={(event) => setEmail(event.target.value)}
+              />
+              <input
+                type="text"
+                className="input"
+                placeholder="Password"
+                name="Password"
+                value={password}
+                onChange={(event) => setPassword(event.target.value)}
+                required
+              />
+              <button type="submit" className="btn">
+                Log In
+              </button>
+              <p className="text">or</p>
 
-            <LoginSocialGoogle
-              isOnlyGetToken
-              client_id={process.env.REACT_APP_GG_APP_ID || ""}
-              // onLoginStart={onLoginStart}
-              onResolve={({ provider, data }) => {
-                setProvider(provider);
-                setProfile(data);
-                history.push('/');
-              }}
-              onReject={(err) => {
-                console.log(err);
-              }}
-            >
-              <GoogleLoginButton />
-            </LoginSocialGoogle>
-            <LoginSocialFacebook
-              isOnlyGetToken
-              appId={process.env.REACT_APP_FB_APP_ID || ""}
-              // onLoginStart={onLoginStart}
-              onResolve={({ provider, data }) => {
-                setProvider(provider);
-                setProfile(data);
-                history.push('/');
-              }}
-              onReject={(err) => {
-                console.log(err);
-              }}
-            >
-              <FacebookLoginButton />
-            </LoginSocialFacebook>
-            <p className="text">
-              New Here ? <Link to="/signup">Sing Up</Link>
-            </p>
-          </form>
+              <LoginSocialGoogle
+                isOnlyGetToken
+                client_id={process.env.REACT_APP_GG_APP_ID || ""}
+                // onLoginStart={onLoginStart}
+                onResolve={({ provider, data }) => {
+                  setProvider(provider);
+                  setProfile(data);
+                  history.push("/");
+                }}
+                onReject={(err) => {
+                  console.log(err);
+                }}
+              >
+                <GoogleLoginButton />
+              </LoginSocialGoogle>
+              <LoginSocialFacebook
+                isOnlyGetToken
+                appId={process.env.REACT_APP_FB_APP_ID || ""}
+                // onLoginStart={onLoginStart}
+                onResolve={({ provider, data }) => {
+                  setProvider(provider);
+                  setProfile(data);
+                  history.push("/");
+                }}
+                onReject={(err) => {
+                  console.log(err);
+                }}
+              >
+                <FacebookLoginButton />
+              </LoginSocialFacebook>
+              <p className="text">
+                Don't have an account ? <Link to="/signup">Signup</Link>
+              </p>
+            </form>
+          </div>
         </div>
       </div>
     </div>
