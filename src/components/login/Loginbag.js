@@ -35,13 +35,19 @@ const Loginbage = () => {
     axiosRequest
       .post("api/token/login/", data)
       .then((response) => {
-        console.log(response.data.data.)
-        // LocalStorageService.getService().setToken();
-        // ToasterConfig(response.data.messsage, "success");
+        console.log(response);
+        LocalStorageService.getService().setToken(response.data.data.access);
+        ToasterConfig(response.data.messsage, "success");
+        window.location.href = "/";
       })
       .catch((error) => {
-        // console.log(error);
-        ToasterConfig(error.response.data.message, "error");
+        if (error) {
+          if (error.response) {
+            if (error.response.data) {
+              ToasterConfig(error.response.data.message, "error");
+            }
+          }
+        }
       });
   };
   // const handleSubmit = (event) => {
@@ -125,6 +131,7 @@ const Loginbage = () => {
                 appId={process.env.REACT_APP_FB_APP_ID || ""}
                 // onLoginStart={onLoginStart}
                 onResolve={({ provider, data }) => {
+                  
                   setProvider(provider);
                   setProfile(data);
                   history.push("/");

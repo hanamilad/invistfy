@@ -1,5 +1,4 @@
 const LocalStorageService = (function () {
-
   var _service;
 
   function _getService() {
@@ -10,36 +9,22 @@ const LocalStorageService = (function () {
     return _service;
   }
 
-  function _setToken(tokenObj) {
-    localStorage.setItem('access_token', tokenObj.access_token);
-    localStorage.setItem('refresh_token', tokenObj.refresh_token);
-    localStorage.setItem('token_type', tokenObj.token_type);
+  function _setToken(access_token) {
+    localStorage.setItem("access_token", access_token);
   }
 
   function _getAccessToken() {
-    return localStorage.getItem('access_token');
-  }
-
-  function _getRefreshToken() {
-    return localStorage.getItem('refresh_token');
-  }
-
-  function _getTokenType() {
-    return localStorage.getItem('token_type');
+    return localStorage.getItem("access_token");
   }
 
   function _clearToken() {
-    localStorage.removeItem('access_token');
-    localStorage.removeItem('refresh_token');
-    localStorage.removeItem('token_type');
+    localStorage.removeItem("access_token");
   }
 
   return {
     getService: _getService,
     setToken: _setToken,
     getAccessToken: _getAccessToken,
-    getRefreshToken: _getRefreshToken,
-    getTokenType: _getTokenType,
     clearToken: _clearToken,
   };
 })();

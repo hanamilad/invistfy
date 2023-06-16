@@ -2,30 +2,37 @@ export const nav = [
   {
     text: "home",
     path: "/",
+    loggedIn: false,
   },
   {
     text: "about",
     path: "/about",
+    loggedIn: false,
   },
   {
     text: "services",
     path: "/services",
+    loggedIn: false,
   },
   {
     text: "blog",
     path: "/blog",
+    loggedIn: false,
   },
   {
     text: "Package",
     path: "/pricing",
+    loggedIn: false,
   },
   {
     text: "Add ",
     path: "/Add",
+    loggedIn: false,
   },
   {
     text: "3D property",
     path: "/video",
+    loggedIn: false,
   },
 ];
 
