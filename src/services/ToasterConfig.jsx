@@ -1,7 +1,6 @@
 import { toast } from "react-toastify";
 
 const ToasterConfig = (message, type) => {
-  console.log(message.response, type);
   if (type === "error") {
     toast.error(message, {
       position: toast.POSITION.BOTTOM_CENTER,
